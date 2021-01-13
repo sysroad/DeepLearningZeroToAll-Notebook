@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Lab_02_3_Linear_Regression</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SciChart" Version="6.2.1.13304" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.4.0" />
+    <PackageReference Include="TensorFlow.NET" Version="0.32.0" />
+  </ItemGroup>
+
+</Project>
