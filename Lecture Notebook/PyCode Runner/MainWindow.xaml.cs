@@ -94,20 +94,23 @@ namespace PyCode_Runner
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var PYHOME = Environment.ExpandEnvironmentVariables(@"C:\Program Files\Python39");
+            var PYHOME = Environment.ExpandEnvironmentVariables(@"C:\Program Files\Python38");
 
-            AddEnvPath(PYHOME, System.IO.Path.Combine(PYHOME, @"Library\bin"));
+            AddEnvPath(
+                PYHOME, 
+                System.IO.Path.Combine(PYHOME, @"Library\bin"),
+                System.IO.Path.Combine(PYHOME, @"DLLs")
+            );
 
             PythonEngine.PythonHome = PYHOME;
 
-            PythonEngine.PythonPath = string.Join(System.IO.Path.PathSeparator.ToString(),
-                new[]
-                {
-                    PythonEngine.PythonPath,
-                    System.IO.Path.Combine(PYHOME, @"Lib\site-packages"),
-                    System.IO.Path.Combine(PYHOME, @"Lib"),
-                    System.IO.Path.Combine(Environment.CurrentDirectory, "PyCode"),
-                });
+            PythonEngine.PythonPath = string.Join(System.IO.Path.PathSeparator,
+            new[]
+            {
+                PythonEngine.PythonPath,
+                System.IO.Path.Combine(PYHOME, @"Lib\site-packages"),
+                System.IO.Path.Combine(PYHOME, @"Lib"),
+            });
 
             PythonEngine.Initialize();
             IntPtr ts = PythonEngine.BeginAllowThreads();
