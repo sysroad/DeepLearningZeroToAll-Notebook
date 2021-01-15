@@ -24,6 +24,9 @@
     <None Update="PyCode\Linear Regression.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="PyCode\Multi Variables Linear Regression.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
